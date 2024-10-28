@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+
+/* button */
+
+.button {
+    display: flex;
+    height: 50px;
+}
+
+.button .btn-primary {
+    border: 2px solid #679289;
+    background-color: #679289;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+.button .btn-primary:hover {
+    border-color: #679289;
+    color: #679289;
+    background: transparent;
+    font-weight: 500;
+}
+
+/* navbar */
+.navbar {
+    transition: all 0.3s ease;
+    z-index: 1;
+    top: 0;
+    position: fixed;
+}
+
+.navbar-brand img {
+    width: 120px;
+}
+
+.navbar-collapse {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: 100%;
+    min-width: 100%;
+    max-width: 200%;
+}
+
+.nav-item {
+    color: #444444;
+    font-size: 20px;
+    font-weight: 500;
+    padding-inline: 50px;
+}
+
+.active-link {
+    color: #444444 !important;
+    transition: .3;
+}
+
+.active-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom:-15px;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    
+}
+
+
+/* project shit */
+.project {
+    background-color: #fafafa;
+    color: #679289;
+    font-weight: 600;
+    padding: 100px 0px;
+}
+
+.featuredText {
+    letter-spacing: 10px;
+    font-size: 15px;
+}
+
+.riceque {
+    font-weight: 700;
+    font-size: 88px;
+    color: #F4C095;
+}
+
+.hackathon {
+    font-weight: 700;
+    font-size: 88px;
+    color: transparent;
+    -webkit-text-stroke: 2px #F4C095;
+}
+
+.project-box {
+    position: relative;
+    width: 100%;
+  }
+  
+  .portfolio-pic {
+    outline: 1px solid white;
+    outline-offset: 2px;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    transition: 0.3s ease-in;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(103, 146, 137, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .overlay:hover {
+    opacity: 1;
+  }
+  
+  .divider {
+    width: 1px;
+    height: 25px;
+    background-color: white;
+  }
+  
+  .stack-list span {
+    color: white;
+    font-size: 14px;
+  }
+  
+  .icon {
+    color: #F4C095;
+  }
+  .icon:hover {
+    color: #252525;
+    transition: 0.2s ease-in;
+  }
+  
+
+.projectGallery {
+    background-color: #131313;
+    padding: 100px 0px 50px 0px;
+}
+
+.secondaryText {
+    font-size: 28px;
+    letter-spacing: 10px;
+}
+.orange {
+ color: #F4C095;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        height: 100vh;
+        gap: 20px;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: visibility 0.3s, opacity 0.3s, transform 0.3s;
+    }
+
+    .navbar-collapse.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        /* width: 100%; */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* width: 100%; */
+    }
+
+    /* .navContainer {
+        padding-top: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    } */
+
+    .nav-link {
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+
+    /* .navbar-header .navbar {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    } */
+
+    /* .content-container {
+        margin-top: 100px;
+    } */
+
+    .content-img img {
+        width: 220px;
+        height: auto;
+    }
+
+    .socmed-icon {
+        margin-top: 50px;
+    }
+
+    .featuredText {
+        letter-spacing: 10px;
+        font-size: 15px;
+    }
+
+    .riceque {
+        font-weight: 700;
+        font-size: 75px;
+        color: #F4C095;
+    }
+
+    .hackathon {
+        font-weight: 700;
+        font-size: 75px;
+        color: transparent;
+        -webkit-text-stroke: 2px #F4C095;
+    }
+}
+
+@media (max-width: 576px) {
+    .featuredText {
+        letter-spacing: 10px;
+        font-size: 12px;
+    }
+
+    .riceque {
+        font-weight: 700;
+        font-size: 50px;
+        color: #F4C095;
+    }
+
+    .hackathon {
+        font-weight: 700;
+        font-size: 50px;
+        color: transparent;
+        -webkit-text-stroke: 2px #F4C095;
+    }
+}
