@@ -66,7 +66,6 @@
         object-fit: cover;
         object-position: center;
     }
-
 </style>
 
 <body id="body" data-bs-theme="dark">
@@ -94,7 +93,7 @@
         </nav>
     </div>
 
-    <div class="container-fluid p-3 d-flex align-items-center" >
+    <div class="container-fluid p-3 d-flex align-items-center">
         <div class="row introTitle">
             <div class="card mx-auto bg-light shadow">
                 <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -103,16 +102,18 @@
                             <img src="assets/naruto1.jpg" class="d-block w-100" alt="Image 1">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                
+
                 <div class="card-body">
                     <p class="titleTxt fw-bold text-center display-1 text-black">
                         Naruto Shippuden
@@ -125,12 +126,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Bootstrap JavaScript (if not already included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN6jIeHz" crossorigin="anonymous"></script>
-    
-
 
 
     <div class="container-fluid loadingBarContainer p-0">
@@ -186,30 +181,27 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 
-<script>
-    const cardContainer = document.getElementById("cardContainer");
-    let page = 1;
+    <script>
+        const cardContainer = document.getElementById("cardContainer");
+        let page = 1;
 
-    const loadNarutoCharacters = async () => {
-        const base = 1 + (page - 1) * 12;
-        const characterCount = base + 11;
+        const loadNarutoCharacters = async () => {
+            const base = 1 + (page - 1) * 12;
+            const characterCount = base + 11;
 
-        cardContainer.innerHTML = ""; // Clear the container
-        for (let i = base; i <= characterCount; i++) {
-            try {
-                const response = await fetch(`https://narutodb.xyz/api/character/${i}`);
-                if (!response.ok) throw new Error(`Character ${i} not found`);
+            cardContainer.innerHTML = "";
+            for (let i = base; i <= characterCount; i++) {
+                try {
+                    const response = await fetch(`https://narutodb.xyz/api/character/${i}`);
+                    if (!response.ok) throw new Error(`Character ${i} not found`);
 
-                const character = await response.json();
+                    const character = await response.json();
+                    const imageUrl =
+                        character.images && character.images.length > 0 ?
+                        character.images[0] :
+                        'assets/noimage.jpg';
 
-                // Handle image logic
-                const imageUrl =
-                    character.images && character.images.length > 0
-                        ? character.images[0]
-                        : 'assets/noimage.jpg';
-
-                // Add the card HTML
-                cardContainer.innerHTML += `
+                    cardContainer.innerHTML += `
                     <div class="col-10 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <a href="view.html?characterName=${encodeURIComponent(character.name)}">
                             <div class="card">
@@ -220,25 +212,24 @@
                             </div>
                         </a>
                     </div>`;
-            } catch (error) {
-                console.error(`Error loading character ID ${i}:`, error);
+                } catch (error) {
+                    console.error(`Error loading character ID ${i}:`, error);
+                }
             }
-        }
-    };
+        };
 
-    const nextPage = () => {
-        page = page < 103 ? page + 1 : 1; // Loop back to the first page after the last
+        const nextPage = () => {
+            page = page < 103 ? page + 1 : 1;
+            loadNarutoCharacters();
+        };
+
+        const prevPage = () => {
+            page = page > 1 ? page - 1 : 103;
+            loadNarutoCharacters();
+        };
+
         loadNarutoCharacters();
-    };
-
-    const prevPage = () => {
-        page = page > 1 ? page - 1 : 103; // Loop back to the last page when on the first
-        loadNarutoCharacters();
-    };
-
-    loadNarutoCharacters(); // Initial load
-</script>
-
+    </script>
 
 
 </body>
