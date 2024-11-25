@@ -205,3 +205,4 @@ srLeft.reveal('.btncardContainer', {delay: 200})
 srLeft.reveal('.vidcontainer2', {delay: 200})
 srLeft.reveal('.vidcontainer2Txt', {delay: 500})
 
+

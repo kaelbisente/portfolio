@@ -101,6 +101,7 @@ srLeft.reveal('.riceque', {delay: 200})
 srLeft.reveal('.hackathon', {delay: 200})
 srLeft.reveal('.infoText', {delay: 200})
 srLeft.reveal('.projectBtn', {delay: 300})
+srLeft.reveal('.spotifyContainer', {delay: 300})
 
 
 

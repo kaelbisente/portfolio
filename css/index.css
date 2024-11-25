@@ -105,6 +105,7 @@ a {
     padding: 3px 8px;
     font-size: 12px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .typed-text {
@@ -376,12 +377,12 @@ a {
     background-color: #fafafa;
 }
 
-.contact .section-title {
+.section-title {
     font-weight: 600;
     color: #2b2a2a;
 }
 
-.contact .section-subtitle {
+.section-subtitle {
     font-size: 16px;
     color: #888888;
 }
