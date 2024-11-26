@@ -21,6 +21,7 @@ a {
 .navbar-brand img {
     max-height: 50px;
     width: 200px;
+    
 }
 
 .nav-item {
@@ -33,6 +34,7 @@ a {
     z-index: 1;
     top: 0;
     position: fixed;
+    background-color: white !important;
 }
 
 .navbar-collapse {
