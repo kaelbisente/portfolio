@@ -5,7 +5,7 @@ window.onscroll = function () {
 function headerShadow() {
     const navHeader = document.getElementById("navHeader");
 
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
         navHeader.style.height = "60px";
         navHeader.querySelector('.navbar-brand img')
